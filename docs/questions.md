@@ -145,4 +145,4 @@ NI cRIO and cDAQ. We modernise test rigs whose original software nobody can main
 
 **support@makkal.co**
 
-*The demonstration interface these questions came from: https://makkal-co.github.io/anvil-pump-durability-demo/ — simulated data, not a product.*
+*The demonstration interface these questions came from: https://makkal-co.github.io/anvil-temper-demo/ — simulated data, not a product.*

@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://makkal-co.github.io/anvil-pump-durability-demo/">
+  <a href="https://makkal-co.github.io/anvil-temper-demo/">
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="docs/img/logo-dark.svg">
       <img src="docs/img/logo-light.svg" alt="Makkal · Anvil Temper" width="440">
@@ -10,7 +10,7 @@
 # Anvil Temper — hydraulic pump durability lab
 
 *Anvil is Makkal's family of reference test systems. Temper is the one for durability test stands.
-[Anvil Assay](https://github.com/makkal-co/anvil-test-data-demo) is its sibling for production test
+[Anvil Assay](https://github.com/makkal-co/anvil-assay-demo) is its sibling for production test
 data.*
 
 **We build the software that runs test rigs, and hand you the keys.**
@@ -20,7 +20,7 @@ covers data acquisition, control, safety, logging, the operator HMI and remote v
 rig or a whole lab. This repository is a working demonstration of that kind of system, built for a
 hydraulic pump endurance lab: eight test stands, one of them partway through a 2 000-hour run.
 
-### ▶ [Open the live demo](https://makkal-co.github.io/anvil-pump-durability-demo/)
+### ▶ [Open the live demo](https://makkal-co.github.io/anvil-temper-demo/)
 
 No install and no sign-up. Pick a role and go. Press **Talk to us** in the header whenever something
 looks like your lab.
@@ -49,7 +49,7 @@ You will recognise at least one of these:
 
 ## Try it in five minutes
 
-1. Open the **[live demo](https://makkal-co.github.io/anvil-pump-durability-demo/)**.
+1. Open the **[live demo](https://makkal-co.github.io/anvil-temper-demo/)**.
 2. Pick a role and press **Enter the demo**. No password is needed. An Operator can drive a stand, an
    Engineer can also edit procedures, and Maintenance can also change stand configuration.
 3. Accept the walkthrough. It starts on the **lab floor**, a live plan of the whole lab, and touches every screen.
@@ -199,7 +199,7 @@ you with something useful, tell us:
 - what is hurting most
 
 **Email [support@makkal.co](mailto:support@makkal.co)**, press **Talk to us** inside the
-[demo](https://makkal-co.github.io/anvil-pump-durability-demo/), or visit **[makkal.co](https://makkal.co)**.
+[demo](https://makkal-co.github.io/anvil-temper-demo/), or visit **[makkal.co](https://makkal.co)**.
 
 ---
 
