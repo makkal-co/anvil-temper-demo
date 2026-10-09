@@ -77,7 +77,7 @@
     const r = ui.rack();
     const vis = M.visRacks(), cells = new Set(vis.map((x) => x.cell)).size;
     $('#hdrCtx').textContent = S.screen === 'overview' ? `· ${M.scope.only ? 'Bay ' + M.scope.cell : 'Lab overview'} — ${cells} bay${cells === 1 ? '' : 's'}, ${vis.length} stands` : S.screen === 'setups' ? '· Test setup library' : r ? `· ${r.name}${r.setup ? ' · ' + r.setup.name + '_Rev' + r.setup.rev : ''}` : '';
-    $('#hdrUser').innerHTML = `<b>${esc(S.user.u)}</b> (${S.user.role})`;
+    $('#hdrUser').innerHTML = `<b>${esc(S.user.u)}</b> <span class="role">(${S.user.role})</span>`;
     const sc = $('#hdrScope');
     if (sc) sc.innerHTML = M.scope.cell == null
       ? '<b>Lab-wide station</b> · watch every stand · stop only'

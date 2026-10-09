@@ -62,6 +62,8 @@ input, select { font: inherit; color: inherit; }
 .hdr .hbtn:hover { background: #3f4e5c; }
 .hdr .user { color: #aeb9c4; }
 .hdr .user b { color: #fff; font-weight: 600; }
+/* Below 1440 px the header runs out of room: drop the role and narrow the speed list. */
+@media (max-width: 1439px) { .hdr { gap: 10px; } .hdr .user .role { display: none; } #hdrSpeed { width: 92px; } }
 .ribbon { background: var(--panel2); border-bottom: 1px solid var(--line); display: flex; align-items: stretch; padding: 0 8px; gap: 2px; overflow-x: auto; }
 .ribbon button { border: 0; background: transparent; padding: 0 16px; color: var(--ink); border-bottom: 3px solid transparent; white-space: nowrap; }
 .ribbon button:hover { background: #dde3e9; }

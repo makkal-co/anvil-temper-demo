@@ -2,12 +2,16 @@
   <a href="https://makkal-co.github.io/anvil-pump-durability-demo/">
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="docs/img/logo-dark.svg">
-      <img src="docs/img/logo-light.svg" alt="Makkal · Anvil" width="420">
+      <img src="docs/img/logo-light.svg" alt="Makkal · Anvil Temper" width="440">
     </picture>
   </a>
 </p>
 
-# Anvil — hydraulic pump durability lab
+# Anvil Temper — hydraulic pump durability lab
+
+*Anvil is Makkal's family of reference test systems. Temper is the one for durability test stands.
+[Anvil Assay](https://github.com/makkal-co/anvil-test-data-demo) is its sibling for production test
+data.*
 
 **We build the software that runs test rigs, and hand you the keys.**
 
