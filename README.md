@@ -52,7 +52,7 @@ You will recognise at least one of these:
 1. Open the **[live demo](https://makkal-co.github.io/anvil-pump-durability-demo/)**.
 2. Pick a role and press **Enter the demo**. No password is needed. An Operator can drive a stand, an
    Engineer can also edit procedures, and Maintenance can also change stand configuration.
-3. Accept the walkthrough. It is short and touches every screen.
+3. Accept the walkthrough. It starts on the **lab floor**, a live plan of the whole lab, and touches every screen.
 4. Then try the four things that matter most in a real lab:
    - **Demo ▾ → inject discharge over-temperature** on Stand 3. Watch the alarm escalate and the
      orderly shutdown step through.
@@ -61,6 +61,10 @@ You will recognise at least one of these:
    - **Stand Config → Sample rates & storage** — change a rate and watch the storage estimate move.
    - **Demo ▾ → open remote web view** — the same data from outside the lab, with a command set that
      cannot start a test.
+
+![Lab floor: four bays of two stands, each with its controller cabinet and stack light, a station per bay, and the control room](docs/img/screens/floor.png)
+
+*The lab floor, live: Stand 3's pump is overheating and shutting itself down, Stand 1's safety relay has dropped its power, and Stand 6 is still on its legacy controller.*
 
 | | |
 |---|---|

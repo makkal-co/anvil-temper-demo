@@ -2,6 +2,9 @@
 (function (M) {
   const ui = M.ui;
   const STEPS = [
+    { screen: 'floor', rack: null, sel: '[data-tour="floor"]', title: 'The lab, as a plan',
+      text: 'Four bays, two stands each. Every stand has its drive motor, the pump under test, an oil tank and a controller cabinet with a stack light. A station PC in each bay drives its two stands; the control room holds the lab service and the remote-access gateway. Motors turn while a test runs, and a pump overheating glows.',
+      why: 'a first-time visitor needs to see where things are before the screens mean anything. Click any stand for its live trend.' },
     { screen: 'overview', rack: null, sel: '[data-tour="tiles"]', title: 'The whole lab at a glance',
       text: 'Every stand, live: running, idle, stopped and offline. Stands not yet migrated appear too, so the phased roll-out is visible rather than hidden.',
       why: 'does the lab want a lab-wide view? It needs a lab-level service, so it is an architecture decision, not just a screen.' },

@@ -220,3 +220,42 @@ table.grid input:disabled, table.grid select:disabled { color: inherit; cursor: 
 .tour-card .f .sp { flex: 1; } .tour-card .f .count { color: var(--muted); font-size: 12px; }
 
 .banner { background: #fff4d6; border-bottom: 1px solid #ecd58f; padding: 5px 12px; font-size: 12px; }
+
+/* ---------- Lab floor ---------- */
+.fl-pad { display: flex; flex-direction: column; height: 100%; }
+.fl-bar { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; flex-wrap: wrap; }
+.fl-bar b { font-size: 15px; } .fl-bar .sp { flex: 1; }
+.fl-wrap { position: relative; flex: 1; min-height: 460px; background: #f7f8fa; border: 1px solid var(--line); border-radius: 4px; }
+.fl { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.fl polygon { stroke: rgba(29, 39, 51, .22); stroke-width: .6; stroke-linejoin: round; }
+.fl .slab { stroke: #c9d0d7; stroke-width: 1; }
+.fl .grid { stroke: #e1e5ea; stroke-width: .7; }
+.fl .zone { fill: none; stroke: rgba(224, 161, 0, .7); stroke-width: 1.5; stroke-dasharray: 7 4; }
+.fl .paint { font: 700 12px "Segoe UI", Arial, sans-serif; letter-spacing: .14em; }
+.fl .cage polygon { stroke: rgba(70, 100, 130, .35); }
+.fl .cab { fill: none; stroke: #1f5fbf; stroke-width: 1.6; stroke-dasharray: 5 7; opacity: .7; animation: flflow 1.1s linear infinite; }
+.fl .cab.off { stroke: #8a939e; stroke-dasharray: 2 5; opacity: .5; animation: none; }
+.fl .cab.gw { stroke: #8a939e; animation-duration: 2.4s; }
+@keyframes flflow { to { stroke-dashoffset: -12; } }
+.fl .spin { fill: none; stroke: #c9d6e3; stroke-width: 1.6; stroke-dasharray: 3 3; opacity: 0; }
+.fl .spin.on { opacity: 1; animation: flflow .35s linear infinite; }
+.fl .hot1 polygon { fill: #e8b54a; } .fl .hot2 polygon { fill: #e0533f; }
+.fl .beacon { stroke: rgba(0, 0, 0, .35); stroke-width: 1; }
+.fl .beacon.blink { animation: flblink .8s steps(2) infinite; }
+@keyframes flblink { 50% { opacity: .25; } }
+.fl .led { fill: #1f9d55; } .fl .led.l1 { fill: #5b8fd9; animation: flblink 1.3s steps(2) infinite; } .fl .led.l2 { animation: flblink 2.1s steps(2) infinite; }
+.fl .wave { fill: none; stroke: #5b8fd9; stroke-width: 1.6; stroke-linecap: round; }
+.fl [data-rack], .fl [data-go] { cursor: pointer; }
+.fl .stn:hover polygon, .fl g[data-go]:hover polygon { filter: brightness(1.07); }
+.fl .lbl rect { fill: rgba(255, 255, 255, .94); stroke: #b9c1ca; stroke-width: 1; }
+.fl .lbl rect.sel { stroke: var(--anvil-product, #1b865f); stroke-width: 1.8; }
+.fl .lbl rect.warn { stroke: var(--warn); } .fl .lbl rect.bad { stroke: var(--bad); } .fl .lbl rect.off { stroke: #c5ccd3; }
+.fl .lbl:hover rect { stroke: #1f5fbf; }
+.fl .lbl text { font: 11.5px "Segoe UI", Arial, sans-serif; fill: #34414e; }
+.fl .lbl .l1 { font-weight: 600; fill: #1d2733; }
+.fl .lbl .l2.warn { fill: #9a6e00; } .fl .lbl .l2.bad { fill: var(--bad); } .fl .lbl .l2.off { fill: #8a939e; }
+.fl .lbl .pbg { fill: #e3e7eb; stroke: none; } .fl .lbl .pfill { fill: var(--ok); stroke: none; } .fl .lbl .pfill.idle { fill: #a7b1bc; }
+.fl-note { position: absolute; left: 10px; bottom: 8px; color: var(--muted); font-size: 11px; }
+.fl-key { display: flex; gap: 12px; color: var(--muted); font-size: 12px; align-items: center; flex-wrap: wrap; }
+.fl-key span { display: inline-flex; align-items: center; gap: 5px; }
+.fl-key .cabkey { width: 18px; border-top: 2px dashed #1f5fbf; display: inline-block; }

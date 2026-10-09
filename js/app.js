@@ -3,6 +3,7 @@
   const ui = M.ui, $ = ui.$, esc = ui.esc, S = ui.state;
 
   const RIBBON = [
+    ['floor', 'Lab Floor'],
     ['overview', 'Lab Overview'],
     ['setups', 'Test Setups'],
     ['manual', 'Manual Control'],
@@ -46,7 +47,7 @@
     $('#login').hidden = true;
     $('#app').hidden = false;
     document.body.classList.remove('pre-login');
-    go('overview', null);
+    go('floor', null);
   };
   $('#hdrLogout').onclick = () => {
     S.user = null;
@@ -61,7 +62,7 @@
   function go(screen, rackId) {
     if (rackId !== undefined) S.rackId = rackId;
     if (NEEDS_RACK[screen] && !S.rackId) S.rackId = 3;
-    if (screen === 'overview') S.rackId = rackId === undefined ? S.rackId : rackId;
+    if (screen === 'overview' || screen === 'floor') S.rackId = rackId === undefined ? S.rackId : rackId;
     S.screen = screen;
     $('#tip').hidden = true;
     renderFrame();
@@ -76,7 +77,7 @@
   function renderFrame() {
     const r = ui.rack();
     const vis = M.visRacks(), cells = new Set(vis.map((x) => x.cell)).size;
-    $('#hdrCtx').textContent = S.screen === 'overview' ? `· ${M.scope.only ? 'Bay ' + M.scope.cell : 'Lab overview'} — ${cells} bay${cells === 1 ? '' : 's'}, ${vis.length} stands` : S.screen === 'setups' ? '· Test setup library' : r ? `· ${r.name}${r.setup ? ' · ' + r.setup.name + '_Rev' + r.setup.rev : ''}` : '';
+    $('#hdrCtx').textContent = S.screen === 'floor' ? '· Lab floor — 4 bays, 8 stands' : S.screen === 'overview' ? `· ${M.scope.only ? 'Bay ' + M.scope.cell : 'Lab overview'} — ${cells} bay${cells === 1 ? '' : 's'}, ${vis.length} stands` : S.screen === 'setups' ? '· Test setup library' : r ? `· ${r.name}${r.setup ? ' · ' + r.setup.name + '_Rev' + r.setup.rev : ''}` : '';
     $('#hdrUser').innerHTML = `<b>${esc(S.user.u)}</b> <span class="role">(${S.user.role})</span>`;
     const sc = $('#hdrScope');
     if (sc) sc.innerHTML = M.scope.cell == null
@@ -104,7 +105,7 @@
     ui.$$('#rail .item').forEach((el) => (el.onclick = () => {
       const id = +el.dataset.r;
       if (!id) return go('overview', null);
-      go(['overview', 'setups'].includes(S.screen) ? 'graph' : S.screen, id);
+      go(['overview', 'floor', 'setups'].includes(S.screen) ? 'graph' : S.screen, id);
     }));
   }
 
@@ -132,7 +133,7 @@
   function renderStatus() {
     const r = ui.rack();
     const el = $('#status');
-    if (!r || S.screen === 'overview' || S.screen === 'setups') {
+    if (!r || S.screen === 'overview' || S.screen === 'floor' || S.screen === 'setups') {
       const n = (f) => M.visRacks().filter(f).length;
       el.innerHTML = `<span><i class="led ok"></i>${n((x) => x.status === 'running')} running</span>
         <span><i class="led idle"></i>${n((x) => ['idle', 'complete'].includes(x.status))} idle</span>
@@ -220,7 +221,7 @@
       [['motor', 900], ['boostPump', 60], ['coolFan', 50], ['loadValve', 30], ['tankHeater', 1]].forEach(([key, val]) => M.sim.cmd(mr, 'SET_OUTPUT', 'LOCAL', S.user.u, { key, val }));
     }
     if (q.hard) M.sim.cmd(M.sim.rack(+q.hard), 'HARD_STOP', 'LOCAL', S.user.u);
-    go(q.screen || 'overview', q.rack ? +q.rack : q.screen === 'overview' ? null : undefined);
+    go(q.screen || 'floor', q.rack ? +q.rack : !q.screen || ['overview', 'floor'].includes(q.screen) ? null : undefined);
     if (q.tour) M.tour.start(+q.tour - 1);
     if (q.try) q.try.split(',').forEach((c) => M.sim.cmd(M.sim.rack(3), c, 'REMOTE', S.user.u, c === 'START' ? M.setupById('end2000') : undefined));
     if (q.remote) M.remote.open();
